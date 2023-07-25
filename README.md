@@ -1,4 +1,4 @@
-# Monitoramento do Jenkins com 
+# Monitoramento do Jenkins com Grafana
 Aplicação de monitoramento do Jenkins com o Grafana + Prometheus
 
 ## Tecnologias usadas

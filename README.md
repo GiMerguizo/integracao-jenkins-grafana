@@ -32,7 +32,6 @@ EC2 > Network & Security > Security Groups > Create security group
 **Inbound rules**
 ![Inbound rules](./Midias/inbound-rules.PNG)
 
-
 ## Docker
 Realizar a configuração do Docker nas 2 instâncias criadas
 <br>
@@ -49,7 +48,6 @@ Executar o Docker
 Confimar se está em execução
 `sudo docker info`
 
----
 ## Jenkins
 Configuração do Jenkins no EC2
 - Acessar a instância do Jenkins com o PuTTY
@@ -65,7 +63,6 @@ Instalar os plugins extras para o uso do Prometheus
 **Plugins**
 - Prometheus metrics plugin
 - CloudBees Disk Usage Simple Plugin
----
 
 ## Grafana
 Configuração do Grafana no EC2
@@ -77,7 +74,7 @@ Configuração do Grafana no EC2
 User: admin
 Password: admin
 ```
----
+
 ## Prometheus
 ### Jenkins
 - Abrir as configurações do Jenkins

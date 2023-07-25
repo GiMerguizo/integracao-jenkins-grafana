@@ -28,30 +28,30 @@ Criação de instâncias EC2 na AWS para provisionar as aplicações
 ```
 
 ### Configuração do Security Group
-EC2 > Network & Security > Security Groups > Create security group
+EC2 > Network & Security > Security Groups > Create security group <br>
 **Inbound rules**
 ![Inbound rules](./Midias/inbound-rules.PNG)
 
 ## Docker
 Realizar a configuração do Docker nas 2 instâncias criadas
 <br>
-Verificar a instalação do Docker
+Verificar a instalação do Docker <br>
 `docker --version`
 
 ### Instalação
-Instalar
-`sudo yum install -y docker`
-Verificar a instalação
-`docker --version`
-Executar o Docker
-`sudo service docker start`
-Confimar se está em execução
-`sudo docker info`
+Instalar <br>
+`sudo yum install -y docker` <br>
+Verificar a instalação <br>
+`docker --version` <br>
+Executar o Docker <br>
+`sudo service docker start` <br>
+Confimar se está em execução <br>
+`sudo docker info` 
 
 ## Jenkins
 Configuração do Jenkins no EC2
 - Acessar a instância do Jenkins com o PuTTY
-- Subir a imagem do Jenkins com o Docker
+- Subir a imagem do Jenkins com o Docker:
 `sudo docker run --name=jenkins -p 8080:8080 -p 50000:50000 jenkins/jenkins:lts`
 - Copiar a senha de admin
 - Abrir a url na porta 8080 (Public IPv4 DNS)
@@ -67,7 +67,7 @@ Instalar os plugins extras para o uso do Prometheus
 ## Grafana
 Configuração do Grafana no EC2
 - Acessar a instância do Grafana com o PuTTY
-- Subir a imagem do Grafana com o Docker
+- Subir a imagem do Grafana com o Docker:
 `sudo docker run --name=grafana -p 3000:3000 grafana/grafana:latest`
 - Entrar na url (porta 3000) e testar se está funcionando
 ```
@@ -78,24 +78,24 @@ Password: admin
 ## Prometheus
 ### Jenkins
 - Abrir as configurações do Jenkins
-Painel de controle > Gerenciar Jenkins > System > Prometheus
+Painel de controle > Gerenciar Jenkins > System > Prometheus <br>
 `Collecting metrics period in seconds: 5`
-- Abrir a url do jenkins com /prometheus
+- Abrir a url do jenkins com /prometheus <br>
 Ex.: https://jenkins.com/prometheus/
 
 ### Instância do Grafana
 Entrar no servidor do Grafana
 
-- Criar um arquivo
+- Criar um arquivo <br>
 `vi prometheus.yml`
 
-- Criar um docker pra rodar a imagem
+- Criar um docker pra rodar a imagem <br>
 `sudo docker run --name=prometheus -d -p 9090:9090 -v ./prometheus.yml:/etc/prometheus/prometheus.yml prom/prometheus`
 
 - Testar a url com a porta 9090
-- Abrir o **Grafana**
-Home > Connections > Data sources > Prometheus
-`Prometheus server URL: http://localhost:9090`
+- Abrir o **Grafana** <br>
+Home > Connections > Data sources > Prometheus <br>
+`Prometheus server URL: http://localhost:9090` <br>
 `Save & test`
 
 - Criar um novo Dashboards
